@@ -1,0 +1,14 @@
+<!-- video/templates/search.html -->
+<form method="get">
+    <input type="text" name="q" value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
+
+{% if results %}
+    <h2>Results</h2>
+    <ul>
+        {% for result in results %}
+            <li>{{ result.Text }} ({{ result.Start }} - {{ result.End }})</li>
+        {% endfor %}
+    </ul>
+{% endif %}
